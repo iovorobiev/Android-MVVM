@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="project"
+            type="com.iovorobiev.mvvm.ui.project.list.ProjectItemViewModel"/>
+        <variable
+            name="navigation"
+            type="com.iovorobiev.mvvm.core.INavigation"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> navigation.openProjectActivity(project.id)}"
+        >
+        <include
+            bind:model="@{project}"
+            layout="@layout/project_general"/>
+    </FrameLayout>
+</layout>

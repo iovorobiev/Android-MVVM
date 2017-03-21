@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="model"
+            type="com.iovorobiev.mvvm.ui.project.create.CreateProjectViewModel"
+            />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/grid_size"
+        tools:context=".ui.project.create.CreateProjectActivity"
+        >
+
+        <EditText
+            android:id="@+id/et_app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={model.name}"
+            android:hint="@string/project_name"
+            />
+
+        <TextView
+            android:id="@+id/tv_cheap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cheap"
+            style="@style/DevParameterStyle"
+            android:layout_below="@id/et_app_name"
+            />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_cheap"
+            android:layout_margin="@dimen/grid_size_half"
+            android:layout_below="@id/et_app_name"
+            android:checked="@={model.cheap}"
+            />
+
+        <TextView
+            android:id="@+id/tv_fast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fast"
+            style="@style/DevParameterStyle"
+            android:layout_below="@id/tv_cheap"
+            />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_fast"
+            android:layout_below="@id/tv_cheap"
+            android:layout_margin="@dimen/grid_size_half"
+            android:checked="@={model.fast}"
+            />
+
+        <TextView
+            android:id="@+id/tv_stable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stable"
+            style="@style/DevParameterStyle"
+            android:layout_below="@id/tv_fast"
+            />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_stable"
+            android:layout_below="@id/tv_fast"
+            android:layout_margin="@dimen/grid_size_half"
+            android:checked="@={model.stable}"
+            />
+
+        <TextView
+            android:id="@+id/tv_estimation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_stable"
+            style="@style/DevParameterStyle"
+            android:text="@{model.description}"
+            />
+        <Button
+            android:layout_below="@id/tv_estimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/grid_size"
+            android:background="@drawable/bg_btn_create"
+            android:textColor="#FFFFFF"
+            android:onClick="@{() -> model.create()}"
+            android:text="@string/create"
+            android:enabled="@{model.isPossible}"
+            tools:enabled="false"
+            />
+    </RelativeLayout>
+</layout>

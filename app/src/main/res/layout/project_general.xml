@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="model"
+            type="com.iovorobiev.mvvm.ui.project.list.ProjectItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/grid_size"
+        >
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_large"
+            android:gravity="center"
+            android:text="@{model.name}"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/grid_size"
+            tools:text="asdasdasd"
+            />
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_medium"
+            android:text="@{String.format(@string/description, model.price, model.speed, model.stability)}"
+            android:layout_marginBottom="@dimen/grid_size"
+            android:gravity="center"
+            android:layout_below="@id/tv_name"
+            tools:text="asdasdasdasd"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_star_black_24dp"
+            android:textSize="@dimen/text_size_medium"
+            android:gravity="center"
+            android:layout_below="@id/tv_description"
+            android:layout_centerHorizontal="true"
+            bind:drawableTint="@{model.starred ? @color/gold : @color/disabledButton}"
+            android:text="0"
+            tools:text="0"
+            />
+        <ImageButton
+            android:id="@+id/ib_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_get_app_black_24dp"
+            android:background="@null"
+            android:layout_below="@id/tv_description"
+            android:layout_alignParentRight="true"
+            android:tint="@color/colorPrimary"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_below="@id/ib_download"
+            android:layout_marginTop="@dimen/grid_size"/>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="project"
+            type="com.iovorobiev.mvvm.ui.project.list.ProjectItemViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            bind:model="@{project}"
+            layout="@layout/project_general"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/grid_size"
+            android:textSize="@dimen/text_size_large"
+            android:text="@string/additional_info"
+            />
+    </LinearLayout>
+</layout>
