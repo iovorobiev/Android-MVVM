@@ -3,10 +3,7 @@ package com.iovorobiev.mvvm.ui.project.create;
 import android.databinding.Observable;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
-import android.util.Log;
-import com.android.annotations.VisibleForTesting;
 import com.iovorobiev.mvvm.core.INavigation;
-import com.iovorobiev.mvvm.core.Navigation;
 import com.iovorobiev.mvvm.ui.DbProjectModel;
 import com.iovorobiev.mvvm.ui.ProjectModel;
 
