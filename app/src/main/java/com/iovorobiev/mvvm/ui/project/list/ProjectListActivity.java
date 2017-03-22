@@ -8,7 +8,6 @@ import com.iovorobiev.mvvm.R;
 import com.iovorobiev.mvvm.core.Navigation;
 import com.iovorobiev.mvvm.databinding.ProjectsListBinding;
 import com.iovorobiev.mvvm.ui.project.ProjectStringResolver;
-import org.jetbrains.annotations.NotNull;
 
 public class ProjectListActivity extends AppCompatActivity {
 

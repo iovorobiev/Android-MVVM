@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.iovorobiev.mvvm.ui.DbProjectModel;
 
 public class DbHelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "Sample.db";
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "Sample.db";
 
     private static DbHelper instance;
 
